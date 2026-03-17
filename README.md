@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Innovative Holdings
+
+A premium, enterprise-level consulting firm website built for lead generation. Strategic consulting and operational advisory positioning.
+
+## Tech Stack
+
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **TailwindCSS**
+- **Framer Motion** (animations)
+- **React Hook Form** + **Zod** (form validation)
+- **Lucide React** (icons)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build & Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Production build
+npm run build
 
-## Learn More
+# Start production server
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Vercel Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push to GitHub
+2. Import project in [Vercel](https://vercel.com)
+3. Deploy (automatic with Next.js)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Or deploy via CLI:
 
-## Deploy on Vercel
+```bash
+npx vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/                 # App Router pages
+│   ├── page.tsx         # Home
+│   ├── services/
+│   ├── case-studies/
+│   ├── industries/
+│   ├── insights/        # Blog + [slug]
+│   ├── resources/       # Lead magnets
+│   ├── about/
+│   ├── careers/
+│   ├── contact/
+│   └── [consulting-slug]/  # SEO pages (strategy-consulting, etc.)
+├── components/
+│   ├── conversion/       # Sticky CTA, Exit Intent
+│   ├── forms/           # Careers, Contact forms
+│   ├── layout/          # Header, Footer
+│   ├── pages/           # Page-specific content
+│   ├── sections/        # Reusable sections
+│   └── ui/              # Base UI components
+└── lib/                 # Constants, utils
+```
+
+## Forms Integration
+
+Forms (Contact, Careers, Newsletter) currently simulate submission. To enable:
+
+1. **Email**: Use [Resend](https://resend.com), [Formspree](https://formspree.io), or similar
+2. **Database**: Add Supabase, Vercel Postgres, or your preferred backend
+3. Update `onSubmit` handlers in form components
+
+## SEO
+
+- Meta titles and descriptions on all pages
+- OpenGraph tags
+- Organization and Article schema (JSON-LD)
+- Sitemap at `/sitemap.xml`
+- Robots at `/robots.txt`
+
+## Design
+
+- **Colors**: Deep navy (#0a1628), electric blue accent (#2563eb), soft grays
+- **Typography**: Source Serif 4 (display), Source Sans 3 (body)
+- **Style**: Minimal, corporate, premium—inspired by McKinsey, BCG, Deloitte
